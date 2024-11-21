@@ -1,130 +1,30 @@
-# MAD-Experiments
+<h1>Arunachalam Thiyagarajan (221501012)</h1>
+Setting up Flutter for development using VS Code and Android Studio involves several steps. Here’s a step-by-step guide to get you started:
 
-Welcome to the Mobile Application Experiments Lab! This repository hosts various mobile application experiments aimed at improving user experience, security, and functionality in mobile apps.
+Step 1: Install Flutter Download Flutter SDK:
 
-Table of Contents
-Overview
-Features
-# Login System
-# Font Change Functionality
-# Calculator
-# Database Connectivity
-# Credential Verification
-# TSS and STT
+Go to the Flutter download page. Download the latest stable version for your Windows. Extract Flutter SDK:
 
+Extract the downloaded zip file to a location of your choice (e.g., C:\src\flutter for Windows or ~/flutter for macOS/Linux). Update your Path:
 
-Overview
-This project contains multiple experiments focused on different aspects of mobile application development. These experiments include implementations of a secure login system, dynamic font change functionality, a basic calculator, and credential verification methods. Each experiment is designed to be modular, allowing you to integrate them into your projects easily.
+Add the Flutter bin directory to your system's PATH environment variable. On Windows: Search for "Environment Variables" in the Start menu. Edit the Path variable and add the full path to the flutter\bin directory. On macOS/Linux: Open a terminal and run nano ~/.bash_profile or nano ~/.zshrc (depending on your shell). Add export PATH="$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin". Save the file and run source ~/.bash_profile or source ~/.zshrc. Step 2: Install Android Studio Download Android Studio:
 
-Features
+Go to the Android Studio download page. Download and install Android Studio for your operating system. Set up Android Studio:
 
-*1. Login System*
-Description:
-The login system is designed with security in mind. It includes the following features:
+Open Android Studio and follow the setup wizard. Install the Android SDK, SDK Platform, and Android Virtual Device (AVD) as prompted. Go to Preferences > Appearance & Behavior > System Settings > Android SDK. Ensure that the necessary SDK platforms and tools are installed (e.g., Android 10.0 (Q) and Android SDK Build-Tools). Create an Android Emulator:
 
-Username and Password Validation: Ensures that users enter valid credentials.
-Error Handling: Provides feedback for incorrect login attempts.
-Session Management: Maintains user sessions securely.
-Usage:
-Users can log in using their username and password. Upon successful login, they are redirected to the main application screen. If the credentials are incorrect, an error message will be displayed.
+Go to AVD Manager (you can find it in the toolbar). Create a new Virtual Device. Select a device definition and a system image, then follow the prompts to create the emulator. Step 3: Install Visual Studio Code (VS Code) Download VS Code:
 
-*2. Font Change Functionality*
-Description:
-This feature allows users to dynamically change the font style and size in the application.
+Go to the VS Code download page. Download and install VS Code for your operating system. Install Flutter and Dart extensions in VS Code:
 
-Predefined Font Styles: Includes a selection of popular fonts.
-Custom Font Sizes: Users can adjust the font size to their preference.
-Real-time Preview: Users can see changes immediately.
-Usage:
-Navigate to the settings menu and choose the "Font Settings" option. From there, select a font style and size that suits your needs.
+Open VS Code. Go to the Extensions view by clicking the Extensions icon in the Activity Bar on the side of the window. Search for Flutter and click Install. The Dart extension will be installed automatically alongside Flutter. Step 4: Set up Flutter in VS Code Check Flutter Installation:
 
-*3. Calculator*
-Description:
-A simple, yet functional calculator built into the application.
+Open a terminal in VS Code. Run flutter doctor to check the installation and to see if there are any dependencies you need to install. The output will guide you to fix any issues. Configure the Flutter SDK Path:
 
-Basic Arithmetic Operations: Supports addition, subtraction, multiplication, and division.
-User-friendly Interface: Designed with ease of use in mind.
-Usage:
-Access the calculator from the main menu. Enter numbers and select the desired operation to perform calculations.
+Open the Command Palette (Ctrl+Shift+P) and type Flutter: Select SDK. Select the path to the Flutter SDK directory. Step 5: Connect VS Code with Android Emulator Launch the Android Emulator:
 
-*4. Connection Establishment*
-Description
-Establishing a connection to a database is the first step in enabling an application to perform database operations. This involves specifying connection parameters such as the database type, server address, database name, username, and password.
-Usage
-To establish a connection, follow these steps:
-Choose a Database Driver: Select the appropriate driver for the database system (e.g., MySQL, PostgreSQL, SQLite).
-Configure Connection Parameters: Set up the necessary parameters, including:
-Database Type: Specify the type of database (e.g., MySQL, Oracle).
-Server Address: Provide the hostname or IP address of the database server.
-Database Name: Indicate the specific database to connect to.
+Open Android Studio. Go to AVD Manager. Start the emulator you created. Run Flutter App from VS Code:
 
-*5. Credential Verification*
-Description:
-Enhances the security of the login system by verifying credentials.
+Open your Flutter project in VS Code. Ensure the emulator is running. Click on the device selector in the bottom-right corner of VS Code and select the emulator. Press F5 to run the Flutter app. Step 6: (Optional) Install Additional Plugins and Tools Install Flutter DevTools:
 
-Email Verification: Sends a verification link to the user's email upon registration.
-Two-Factor Authentication (2FA): Optional feature for additional security.
-Password Strength Checker: Ensures users create strong passwords.
-Usage:
-Users are required to verify their email address during registration. For enhanced security, 2FA can be enabled from the security settings.
-
-*6. Overview of TSS and STT*
-Text-to-Speech (TTS) and Speech-to-Text (STT) are essential technologies that enhance user interaction within applications by converting text into spoken words and vice versa. These functionalities can significantly improve accessibility and user experience.
-
-Text-to-Speech (TTS)
-Description
-TTS technology transforms written text into audible speech, enabling applications to read content aloud. This is particularly beneficial for users who prefer auditory information or have reading difficulties.
-Key Features
-Natural Voice Generation: Modern TTS systems utilize advanced algorithms to produce human-like voices, enhancing the listening experience.
-Wide Application: TTS is used in virtual assistants, educational tools, and accessibility applications for visually impaired users.
-Usage in the Application
-Incorporating TTS allows the application to provide auditory feedback, read notifications, or assist users in navigating through text-heavy content. This can be implemented using various TTS engines, such as Google TTS or Microsoft Azure TTS.
-
-Speech-to-Text (STT)
-Description
-STT technology converts spoken language into written text, facilitating transcription and enabling voice commands within applications. This technology is crucial for creating accessible interfaces and enhancing user interaction.
-Key Features
-Real-time Transcription: STT systems can transcribe spoken words into text almost instantaneously, which is beneficial for live captioning and note-taking.
-Language Support: Many STT systems support multiple languages, making them versatile for global applications. For instance, Microsoft Azure Speech to Text supports over 100 languages.
-Integration with Voice Commands: STT can be used to enable voice-controlled features, allowing users to interact with the application hands-free.
-Usage in the Application
-Integrating STT into the application can allow users to dictate messages, control app functions, or transcribe audio recordings. This enhances usability, particularly in scenarios where typing is impractical.
-
-Implementation Considerations
-Technical Setup
-To implement TTS and STT in the application, developers should consider the following:
-Choosing the Right API: Select a TTS/STT API that fits the application's needs. Popular options include Google Cloud Speech-to-Text, Microsoft Azure Speech, and ElevenLabs for TTS.
-Handling Errors and Edge Cases: Implement robust error handling to manage issues like unrecognized speech or API failures.
-User Experience Design: Ensure that the integration of TTS and STT is seamless and intuitive for users, providing clear instructions and feedback.
-
-Installation
-Clone this repository:
-
-bash
-Copy code
-git clone (https://github.com/ArunaSekar1/Aruna_221501011_MAD)
-Navigate to the project directory:
-
-bash
-Copy code
-cd mobile-app-experiments-lab
-Install dependencies:
-
-bash
-Copy code
-npm install
-Run the application:
-
-bash
-Copy code
-npm start
-Usage
-Once the application is running, you can explore the different experiments by navigating through the menu. Each feature is designed to be intuitive, with user guides available in the help section of the application.
-
-Contributing
-Contributions are welcome! Please read the CONTRIBUTING.md file for more information on how to get involved.
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Feel free to modify this template according to your specific project requirements. If you need additional sections or details, let me know!
+Run flutter pub global activate devtools in the terminal. Run flutter pub global run devtools to launch DevTools.
