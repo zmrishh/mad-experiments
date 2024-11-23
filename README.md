@@ -1,4 +1,4 @@
-<h1>Balaji S (221501017)</h1>
+<h1> Amrish P (221501007)</h1>
 Setting up Flutter for development using VS Code and Android Studio involves several steps. Here’s a step-by-step guide to get you started:
 
 Step 1: Install Flutter Download Flutter SDK:
